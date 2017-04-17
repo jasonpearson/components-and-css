@@ -9,4 +9,4 @@ const CatsList = () => {
   )
 }
 
-export {CatsList};
+export default CatsList;

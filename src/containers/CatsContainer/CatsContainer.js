@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {
   CatsList,
   Cat
-} from './index';
+} from '../../components';
 
 class CatsContainer extends Component {
   constructor (props) {
@@ -32,5 +32,3 @@ class CatsContainer extends Component {
 }
 
 export default CatsContainer;
-export {Cat} from './Cat/Cat';
-export {CatsList} from './CatsList/CatsList';

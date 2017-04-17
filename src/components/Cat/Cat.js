@@ -5,4 +5,4 @@ const Cat = () => (
   <div className={styles.Cat}>foo</div>
 );
 
-export {Cat};
+export default Cat;
