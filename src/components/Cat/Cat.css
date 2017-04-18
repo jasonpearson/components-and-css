@@ -1,4 +1,8 @@
 .Cat {
   background: var(--color2);
   display: flex;
+
+  span {
+    color: yellow;
+  }
 }
