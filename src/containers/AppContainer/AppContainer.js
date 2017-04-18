@@ -12,6 +12,8 @@ import {
   DogsContainer
 } from '../index';
 
+import './AppContainer.css';
+
 class AppContainer extends Component {
   render () {
     return (
