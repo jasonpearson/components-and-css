@@ -3,11 +3,20 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
+  devtool: 'source-map',
+
+  devServer: {
+    port: 8080,
+    historyApiFallback: true
+  },
+
   entry: path.resolve(__dirname, 'src/index.js'),
+
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'build.bundle.js'
+    filename: 'scripts.bundle.js'
   },
+
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/index.ejs'),
@@ -17,11 +26,7 @@ module.exports = {
       filename: 'styles.bundle.css'
     })
   ],
-  devtool: 'source-map',
-  devServer: {
-    port: 8080,
-    historyApiFallback: true
-  },
+
   module: {
     rules: [
       {
@@ -49,10 +54,6 @@ module.exports = {
             }
           ]
         })
-        // use: [
-        //   'style-loader',
-        //   'css-loader'
-        // ]
       }
     ]
   }
