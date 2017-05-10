@@ -1,6 +1,9 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const PurifyCSSPlugin = require('purifycss-webpack');
+const DEV = process.env.npm_lifecycle_event === 'dev' ? true : false;
 
 module.exports = {
   devtool: 'source-map',
@@ -10,7 +13,11 @@ module.exports = {
     historyApiFallback: true
   },
 
-  entry: path.resolve(__dirname, 'src/index.js'),
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
+
+  entry: path.resolve(__dirname, 'src/index.jsx'),
 
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -18,19 +25,38 @@ module.exports = {
   },
 
   plugins: [
+    new webpack.DefinePlugin({
+      'DEV': JSON.stringify(DEV)
+    }),
+
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/index.ejs'),
       inject: 'body'
     }),
+
     new ExtractTextWebpackPlugin({
       filename: 'styles.bundle.css'
-    })
+    }),
+
+    // new PurifyCSSPlugin({
+    //   paths: [path.resolve(__dirname, 'src')],
+    //   styleExtensions: ['.css'],
+    //   purifyOptions: {
+    //     whitelist: ['*purified*']
+    //   }
+    // }),
   ],
 
   module: {
     rules: [
       {
-        test: /\.js$/,
+        enforce: 'pre',
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+      },
+      {
+        test: /\.(js|jsx)$/,
         loader: 'babel-loader',
         options: {
           presets: ['react', 'stage-2']
@@ -46,7 +72,7 @@ module.exports = {
               options: {
                 modules: true,
                 importLoaders: 1,
-                localIdentName: '[local]__[hash:base64:5]'
+                localIdentName: '[local]_purified',
               }
             },
             {

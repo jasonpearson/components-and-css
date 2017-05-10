@@ -1,34 +1,11 @@
-import React, {Component} from 'react';
-import {
-  DogsList,
-  Dog
-} from '../../components';
+import { connect } from 'react-redux';
+import { DogsList } from '../../components';
 
-class DogsContainer extends Component {
-  constructor (props) {
-    super(props);
-
-    this.state = {
-      cats: [
-        {
-          name: 'Truman',
-          age: 12
-        },
-        {
-          name: 'Bubba',
-          age: 15
-        }
-      ]
-    };
-  }
-
-  render () {
-    return (
-      <div>
-        <DogsList />
-      </div>
-    );
-  }
-}
-
-export default DogsContainer;
+export default connect(
+  state => ({
+    state,
+  }),
+  () => ({
+    foo: () => 'bar',
+  }),
+)(DogsList);

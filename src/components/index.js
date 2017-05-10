@@ -1,11 +1,6 @@
-import CatsList from './CatsList/CatsList';
-import Cat from './Cat/Cat';
-import DogsList from './DogsList/DogsList';
-import Dog from './Dog/Dog';
-
-export {
-  CatsList,
-  Cat,
-  DogsList,
-  Dog
-};
+export { App } from './App/App';
+export { Home } from './Home/Home';
+export { CatsList } from './CatsList/CatsList';
+export { Cat } from './Cat/Cat';
+export { DogsList } from './DogsList/DogsList';
+export { Dog } from './Dog/Dog';

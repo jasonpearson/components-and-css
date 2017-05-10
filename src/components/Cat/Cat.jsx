@@ -7,4 +7,4 @@ const Cat = () => (
   </div>
 );
 
-export default Cat;
+export { Cat };
