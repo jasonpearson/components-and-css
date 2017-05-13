@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { App } from '../../components';
+import { DogsList } from '../components';
 
 export default connect(
   state => ({
@@ -8,4 +8,4 @@ export default connect(
   () => ({
     foo: () => 'bar',
   }),
-)(App);
+)(DogsList);

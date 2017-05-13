@@ -1,7 +1,7 @@
-import AppContainer from './AppContainer/AppContainer';
-import HomeContainer from './HomeContainer/HomeContainer';
-import CatsContainer from './CatsContainer/CatsContainer';
-import DogsContainer from './DogsContainer/DogsContainer';
+import AppContainer from './AppContainer';
+import HomeContainer from './HomeContainer';
+import CatsContainer from './CatsContainer';
+import DogsContainer from './DogsContainer';
 
 export {
   AppContainer,

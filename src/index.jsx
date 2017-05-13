@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
 import { AppContainer } from './containers';
-import rootReducer from './containers/reducer';
+import rootReducer from './reducers/reducer';
 
 // let document;
 // let window;

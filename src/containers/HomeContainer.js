@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
-import { CatsList } from '../../components';
+import { Home } from '../components';
 
 export default connect(
   state => ({
-    cats: state.cats,
+    state,
   }),
   () => ({
     foo: () => 'bar',
   }),
-)(CatsList);
+)(Home);
