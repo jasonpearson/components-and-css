@@ -1,0 +1,4 @@
+.Dog {
+  background: var(--color1);
+  display: flex;
+}
