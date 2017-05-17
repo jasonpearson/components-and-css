@@ -3,9 +3,9 @@ import { CatsList } from '../components';
 
 export default connect(
   state => ({
-    cats: state.cats,
+    lonelyCats: state.cats.lonelyCats,
   }),
   () => ({
-    foo: () => 'bar',
+    handleAdoption: () => 'bar',
   }),
 )(CatsList);

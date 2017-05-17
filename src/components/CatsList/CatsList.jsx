@@ -1,10 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Cat } from '../index';
 
-const CatsList = () => (
+const renderCat = (props, cat, i) => <Cat key={i} {...cat} {...props} />;
+
+const CatsList = ({
+  lonelyCats,
+  ...passProps
+}) => (
   <div>
-    <Cat />
+    {lonelyCats.map(renderCat.bind(null, passProps))}
   </div>
 );
+
+CatsList.propTypes = {
+  lonelyCats: PropTypes.array.isRequired,
+};
 
 export { CatsList };

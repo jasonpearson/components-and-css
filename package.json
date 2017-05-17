@@ -36,6 +36,7 @@
     "purifycss-webpack": "^0.6.1",
     "redux-devtools": "^3.4.0",
     "style-loader": "^0.16.1",
+    "styled-components": "^1.4.6",
     "stylelint": "^7.10.1",
     "stylelint-config-standard": "^16.0.0",
     "webpack": "^2.3.3",
