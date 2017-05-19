@@ -1,24 +1,27 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Route, Link } from 'react-router-dom';
 
 import CatsListContainer from '../CatsList';
 import DogsListContainer from '../DogsList';
 
+const removePet = (pet, props) => (
+  pet.type === 'cat' ? props.removeCat(pet) : props.removeDog(pet)
+);
 
-const App = () => (
+const App = props => (
   <div>
     <section>
       <h1>My Pets</h1>
       <ul>
-        {/* {
+        {
           props.myPets.map((pet, i) => (
             <li key={i}>
               {pet.name}
-              <button onClick={() => props.removePet(pet)}>remove</button>
+              <button onClick={() => removePet(pet, props)}>remove</button>
             </li>
           ))
-        }*/}
+        }
       </ul>
     </section>
 
@@ -42,8 +45,7 @@ const App = () => (
 );
 
 App.propTypes = {
-  // myPets: PropTypes.array.isRequired,
-  // removePet: PropTypes.func.isRequired,
+  myPets: PropTypes.array.isRequired,
 };
 
 export default App;

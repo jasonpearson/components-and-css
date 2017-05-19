@@ -32,12 +32,12 @@ render(
   document.getElementById('app'),
 );
 
-if (module.hot) {
-  module.hot.accept();
+// if (module.hot) {
+//   module.hot.accept();
 
-  window.addEventListener('message', () => {
-    if (process.env.NODE_ENV !== 'production') {
-      console.clear();
-    }
-  });
-}
+//   window.addEventListener('message', () => {
+//     if (process.env.NODE_ENV !== 'production') {
+//       console.clear();
+//     }
+//   });
+// }

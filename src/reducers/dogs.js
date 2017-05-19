@@ -1,4 +1,4 @@
-import * as petConstants from '../constants/petConstants';
+import * as petConstants from '../constants/dogConstants';
 
 const initialState = {
   myDogs: [],
@@ -11,8 +11,10 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case petConstants.ADOPT_PET:
-      const addIndex = state.lonelyDogs.filter(d => d.id === action.pet.id);
+    case petConstants.ADOPT_DOG:
+      const addIndex = state.lonelyDogs.indexOf(
+        state.lonelyDogs.filter(c => c.id === action.pet.id)[0],
+      );
 
       return {
         ...state,
@@ -26,8 +28,8 @@ export default (state = initialState, action) => {
         ],
       };
 
-    case petConstants.REMOVE_PET:
-      const removeIndex = state.myDogs.filter(c => c.id === action.pet.id);
+    case petConstants.REMOVE_DOG:
+      const removeIndex = state.myDogs.indexOf(state.myDogs.filter(c => c.id === action.pet.id)[0]);
 
       return {
         ...state,
