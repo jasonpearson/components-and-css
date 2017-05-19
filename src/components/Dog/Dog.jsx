@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './Dog.css';
+import styles from './styles.css';
 
 const Dog = () => (
   <div className={styles.Dog}>foo</div>
 );
 
-export { Dog };
+export default Dog;

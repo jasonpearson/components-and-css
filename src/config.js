@@ -1,6 +1,6 @@
 module.exports = {
   variables: {
     color1: 'teal',
-    color2: 'purple'
-  }
+    color2: 'purple',
+  },
 };

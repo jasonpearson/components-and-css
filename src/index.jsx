@@ -1,15 +1,13 @@
 /* eslint no-undef: 0 */
 import React from 'react';
 import { render } from 'react-dom';
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
-import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux';
+import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
-import { AppContainer } from './containers';
-import rootReducer from './reducers/reducer';
+import AppContainer from './components/App';
+import rootReducer from './reducers';
 
-// let document;
-// let window;
 const history = createHistory();
 
 const middleware = [
@@ -17,10 +15,7 @@ const middleware = [
 ];
 
 const store = createStore(
-  combineReducers({
-    ...rootReducer,
-    router: routerReducer,
-  }),
+  rootReducer,
   window.__preloaded_state__,
   compose(
     applyMiddleware(...middleware),
@@ -36,3 +31,13 @@ render(
   </Provider>,
   document.getElementById('app'),
 );
+
+if (module.hot) {
+  module.hot.accept();
+
+  window.addEventListener('message', () => {
+    if (process.env.NODE_ENV !== 'production') {
+      console.clear();
+    }
+  });
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dog } from '../index';
+import Dog from '../Dog';
 
 const DogsList = () => (
   <div>
@@ -7,4 +7,4 @@ const DogsList = () => (
   </div>
 );
 
-export { DogsList };
+export default DogsList;

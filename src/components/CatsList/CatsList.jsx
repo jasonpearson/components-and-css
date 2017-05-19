@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Cat } from '../index';
+import Cat from '../Cat';
 
 const renderCat = (props, cat, i) => <Cat key={i} {...cat} {...props} />;
 
@@ -17,4 +17,4 @@ CatsList.propTypes = {
   lonelyCats: PropTypes.array.isRequired,
 };
 
-export { CatsList };
+export default CatsList;
