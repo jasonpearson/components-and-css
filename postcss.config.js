@@ -1,32 +1,38 @@
 const config = require('./src/config');
+const stylelint = require('stylelint');
+const postcssBrowserReporter = require('postcss-browser-reporter');
+// const postcssAutoreset = require('postcss-autoreset');
+const postcssCustomProperties = require('postcss-custom-properties');
+const postcssNested = require('postcss-nested');
+const postcssAutoprefixer = require('autoprefixer');
 
 module.exports = {
   plugins: [
-    require('stylelint'),
+    stylelint(),
 
-    require('postcss-browser-reporter')(),
+    postcssBrowserReporter(),
 
     // require('postcss-initial')(),
 
-    require('postcss-autoreset')({
-      reset: {
-        all: 'initial',
-        margin: 0,
-        padding: 0,
-        boxSizing: 'border-box'
-      }
-    }),
+    // postcssAutoreset({
+    //   reset: {
+    //     all: 'initial',
+    //     margin: 0,
+    //     padding: 0,
+    //     boxSizing: 'border-box',
+    //   },
+    // }),
 
-    require('postcss-custom-properties')({
+    postcssCustomProperties({
       preserve: true,
       variables: config.variables,
-      appendVariables: true
+      appendVariables: true,
     }),
 
-    require('postcss-nested')(),
+    postcssNested(),
 
-    require('autoprefixer')({
-      browsers: ['> 1%', 'last 2 versions']
-    })
-  ]
+    postcssAutoprefixer({
+      browsers: ['> 1%', 'last 2 versions'],
+    }),
+  ],
 };

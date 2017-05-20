@@ -2,40 +2,41 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
-const PurifyCSSPlugin = require('purifycss-webpack');
-const DEV = process.env.npm_lifecycle_event === 'dev' ? true : false;
+// const PurifyCSSPlugin = require('purifycss-webpack');
+const DEV = process.env.npm_lifecycle_event === 'dev';
 
 module.exports = {
   devtool: 'source-map',
 
   devServer: {
     port: 8080,
-    historyApiFallback: true
+    historyApiFallback: true,
+    contentBase: path.resolve(__dirname, 'src/assets'),
   },
 
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
   },
 
   entry: path.resolve(__dirname, 'src/index.jsx'),
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'scripts.bundle.js'
+    filename: 'scripts.bundle.js',
   },
 
   plugins: [
     new webpack.DefinePlugin({
-      'DEV': JSON.stringify(DEV)
+      DEV: JSON.stringify(DEV),
     }),
 
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/index.ejs'),
-      inject: 'body'
+      inject: 'body',
     }),
 
     new ExtractTextWebpackPlugin({
-      filename: 'styles.bundle.css'
+      filename: 'styles.bundle.css',
     }),
 
     // new PurifyCSSPlugin({
@@ -59,8 +60,8 @@ module.exports = {
         test: /\.(js|jsx)$/,
         loader: 'babel-loader',
         options: {
-          presets: ['react', 'stage-2']
-        }
+          presets: ['react', 'stage-2'],
+        },
       },
       {
         test: /\.css$/,
@@ -73,14 +74,14 @@ module.exports = {
                 modules: true,
                 importLoaders: 1,
                 localIdentName: '[local]_purified',
-              }
+              },
             },
             {
-              loader: 'postcss-loader'
-            }
-          ]
-        })
-      }
-    ]
-  }
+              loader: 'postcss-loader',
+            },
+          ],
+        }),
+      },
+    ],
+  },
 };

@@ -8,7 +8,7 @@ const CatsList = ({
   lonelyCats,
   ...passProps
 }) => (
-  <div>
+  <div className="CatsList">
     {lonelyCats.map(renderCat.bind(null, passProps))}
   </div>
 );

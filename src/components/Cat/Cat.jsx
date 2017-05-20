@@ -7,7 +7,7 @@ const Cat = ({
   ...props
 }) => (
   <div>
-    <img src="http://r.ddmcdn.com/s_f/o_1/cx_462/cy_245/cw_1349/ch_1349/w_720/APL/uploads/2015/06/caturday-shutterstock_149320799.jpg" width={150} />
+    {!props.imageUrl ? null : <img src={props.imageUrl} width={150} />}
     <button onClick={() => adoptPet(props)}>Adopt me</button>
   </div>
 );
@@ -15,6 +15,11 @@ const Cat = ({
 Cat.propTypes = {
   adoptPet: PropTypes.func.isRequired,
   id: PropTypes.number.isRequired,
+  imageUrl: PropTypes.string,
+};
+
+Cat.defaultProps = {
+  imageUrl: null,
 };
 
 export default Cat;

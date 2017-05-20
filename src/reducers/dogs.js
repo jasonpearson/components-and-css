@@ -3,9 +3,9 @@ import * as petConstants from '../constants/dogConstants';
 const initialState = {
   myDogs: [],
   lonelyDogs: [
-    { id: 1, name: 'bubba' },
-    { id: 2, name: 'truman' },
-    { id: 3, name: 'bandit' },
+    { id: 1, name: 'bubba', imageUrl: '/dog1.jpg' },
+    { id: 2, name: 'truman', imageUrl: '/dog2.jpg' },
+    { id: 3, name: 'bandit', imageUrl: '/dog3.jpg' },
   ],
 };
 

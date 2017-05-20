@@ -4,7 +4,7 @@ import * as petActions from '../../actions/dogActions';
 
 export default connect(
   state => ({
-    lonelyDogs: state.cats.lonelyDogs,
+    lonelyDogs: state.dogs.lonelyDogs,
   }),
   dispatch => ({
     adoptPet: pet => dispatch(petActions.adoptDog(pet)),

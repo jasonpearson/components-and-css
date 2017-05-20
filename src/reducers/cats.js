@@ -3,9 +3,9 @@ import * as petConstants from '../constants/catConstants';
 const initialState = {
   myCats: [],
   lonelyCats: [
-    { id: 1, name: 'sims', type: 'cat' },
-    { id: 2, name: 'mochi', type: 'cat' },
-    { id: 3, name: 'goose', type: 'cat' },
+    { id: 1, name: 'sims', type: 'cat', imageUrl: '/cat1.jpg' },
+    { id: 2, name: 'mochi', type: 'cat', imageUrl: '/cat2.jpg' },
+    { id: 3, name: 'goose', type: 'cat', imageUrl: '/cat3.jpg' },
   ],
 };
 
@@ -16,17 +16,11 @@ const cats = (state = initialState, action) => {
         state.lonelyCats.filter(c => c.id === action.pet.id)[0],
       );
 
-      const pet = {
-        id: action.pet.id,
-        name: action.pet.name,
-        type: action.pet.type,
-      };
-
       return {
         ...state,
         myCats: [
           ...state.myCats,
-          pet,
+          action.pet,
         ],
         lonelyCats: [
           ...state.lonelyCats.slice(0, addIndex),
