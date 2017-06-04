@@ -6,14 +6,6 @@ import Nav from '../Nav';
 import CatsListContainer from '../CatsList';
 import DogsListContainer from '../DogsList';
 
-const renderPetsContainer = myPets => (
-  !myPets.length ? null : (
-    <aside>
-      <MyPetsContainer />
-    </aside>
-  )
-);
-
 const App = ({
   myPets,
 }) => (
@@ -27,7 +19,13 @@ const App = ({
       <Route path="/dogs" component={DogsListContainer} />
     </main>
 
-    {renderPetsContainer(myPets)}
+    {
+      !myPets.length ? null : (
+        <aside>
+          <MyPetsContainer />
+        </aside>
+      )
+    }
   </div>
 );
 

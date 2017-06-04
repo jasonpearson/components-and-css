@@ -1,7 +1,7 @@
 const config = require('./src/config');
 const stylelint = require('stylelint');
 const postcssBrowserReporter = require('postcss-browser-reporter');
-// const postcssAutoreset = require('postcss-autoreset');
+const postcssAutoreset = require('postcss-autoreset');
 const postcssCustomProperties = require('postcss-custom-properties');
 const postcssNested = require('postcss-nested');
 const postcssAutoprefixer = require('autoprefixer');
@@ -14,14 +14,15 @@ module.exports = {
 
     // require('postcss-initial')(),
 
-    // postcssAutoreset({
-    //   reset: {
-    //     all: 'initial',
-    //     margin: 0,
-    //     padding: 0,
-    //     boxSizing: 'border-box',
-    //   },
-    // }),
+    postcssAutoreset({
+      reset: {
+        all: 'initial',
+        display: 'block',
+        margin: 0,
+        padding: 0,
+        boxSizing: 'border-box',
+      },
+    }),
 
     postcssCustomProperties({
       preserve: true,

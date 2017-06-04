@@ -5,7 +5,7 @@ const initialState = {
   lonelyCats: [
     { id: 1, name: 'sims', type: 'cat', imageUrl: '/cat1.jpg' },
     { id: 2, name: 'mochi', type: 'cat', imageUrl: '/cat2.jpg' },
-    { id: 3, name: 'goose', type: 'cat', imageUrl: '/cat3.jpg' },
+    { id: 3, name: 'goose', type: 'cat', imageUrl: '/cat3.jpg', extraSpecial: true },
   ],
 };
 

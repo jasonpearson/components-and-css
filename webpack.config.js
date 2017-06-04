@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
-// const PurifyCSSPlugin = require('purifycss-webpack');
+
 const DEV = process.env.npm_lifecycle_event === 'dev';
 
 module.exports = {
@@ -38,14 +38,6 @@ module.exports = {
     new ExtractTextWebpackPlugin({
       filename: 'styles.bundle.css',
     }),
-
-    // new PurifyCSSPlugin({
-    //   paths: [path.resolve(__dirname, 'src')],
-    //   styleExtensions: ['.css'],
-    //   purifyOptions: {
-    //     whitelist: ['*purified*']
-    //   }
-    // }),
   ],
 
   module: {
@@ -73,7 +65,7 @@ module.exports = {
               options: {
                 modules: true,
                 importLoaders: 1,
-                localIdentName: '[local]_purified',
+                localIdentName: '[local]-[hash:base64:5]',
               },
             },
             {

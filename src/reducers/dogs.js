@@ -4,7 +4,7 @@ const initialState = {
   myDogs: [],
   lonelyDogs: [
     { id: 1, name: 'bubba', imageUrl: '/dog1.jpg' },
-    { id: 2, name: 'truman', imageUrl: '/dog2.jpg' },
+    { id: 2, name: 'truman', imageUrl: '/dog2.jpg', extraSpecial: true },
     { id: 3, name: 'bandit', imageUrl: '/dog3.jpg' },
   ],
 };
