@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Image } from '../Dogs';
+import Image from '../Image';
 
 const removePet = (pet, props) => (
   pet.type === 'cat' ? props.removeCat(pet) : props.removeDog(pet)
@@ -38,10 +38,7 @@ const MyPets = props => (
       {
         props.myPets.map((pet, i) => (
           <li key={i}>
-            <Image size={75}>
-              <img src={pet.imageUrl} />
-              <h3>{pet.name}</h3>
-            </Image>
+            <Image technique="styledcomponents" size={75} pet={pet} />
             <a role="button" onClick={() => removePet(pet, props)}>remove</a>
           </li>
         ))
