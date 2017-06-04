@@ -31,6 +31,7 @@
   background: white;
   padding: 5px;
   padding-bottom: 0;
+  box-sizing: content-box;
 
   @media (min-width: 400px) {
     height: 150px;
@@ -42,7 +43,7 @@
     object-fit: cover;
 
     @media (min-width: 400px) {
-      height: 115px;
+      height: 125px;
     }
   }
 

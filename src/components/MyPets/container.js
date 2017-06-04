@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import MyPets from './MyPets';
+import MyPets from './component';
 import * as catActions from '../../actions/catActions';
 import * as dogActions from '../../actions/dogActions';
 

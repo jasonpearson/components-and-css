@@ -51,17 +51,12 @@ export const ExtraSpecialDog = Dog.extend`
 */
 
 export const Image = styled.div`
-  flex-basis: 125px;
+  flex-basis: ${props => props.size}px;
   height: auto;
   flex-shrink: 0;
   background: white;
   padding: 5px;
   padding-bottom: 0;
-  box-sizing: border-box;
-
-  @media (min-width: 400px) {
-    height: 150px;
-  }
 
   img {
     width: 100%;
@@ -69,7 +64,7 @@ export const Image = styled.div`
     object-fit: cover;
 
     @media (min-width: 400px) {
-      height: 115px;
+      height: ${props => props.size}px;
     }
   }
 

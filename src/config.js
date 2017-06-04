@@ -1,6 +1,6 @@
 module.exports = {
   variables: {
-    bg: 'teal',
-    fg: 'purple',
+    bg: '#C3BFA6',
+    fg: '#736C7A',
   },
 };

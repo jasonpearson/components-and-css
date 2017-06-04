@@ -10,11 +10,11 @@ const Dog = ({
   adoptPet,
   lonelyDogs,
 }) => (
-  <div className="DogsList">
+  <div>
     {lonelyDogs.map((dog, index) => (
       <DogWrapper key={index} extraSpecial={dog.extraSpecial}>
         {!dog.imageUrl ? null : (
-          <Image>
+          <Image size={125}>
             <img src={dog.imageUrl} />
             <h3>{dog.name}</h3>
           </Image>

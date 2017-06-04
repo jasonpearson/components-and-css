@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route } from 'react-router-dom';
 import MyPetsContainer from '../MyPets';
-import Nav from '../Nav';
+import StyledNav from '../Nav';
 import CatsContainer from '../Cats';
 import DogsContainer from '../Dogs';
 
@@ -11,7 +11,7 @@ const App = ({
 }) => (
   <div>
     <header>
-      <Nav />
+      <StyledNav />
     </header>
 
     <main>
