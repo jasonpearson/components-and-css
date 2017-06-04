@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import CatsList from './CatsList';
+import Cats from './component';
 import * as petActions from '../../actions/catActions';
 
 export default connect(
@@ -9,4 +9,4 @@ export default connect(
   dispatch => ({
     adoptPet: pet => dispatch(petActions.adoptCat(pet)),
   }),
-)(CatsList);
+)(Cats);

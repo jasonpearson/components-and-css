@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { Route } from 'react-router-dom';
 import MyPetsContainer from '../MyPets';
 import Nav from '../Nav';
-import CatsListContainer from '../CatsList';
-import DogsListContainer from '../DogsList';
+import CatsContainer from '../Cats';
+import DogsContainer from '../Dogs';
 
 const App = ({
   myPets,
@@ -15,8 +15,8 @@ const App = ({
     </header>
 
     <main>
-      <Route path="/cats" component={CatsListContainer} />
-      <Route path="/dogs" component={DogsListContainer} />
+      <Route path="/cats" component={CatsContainer} />
+      <Route path="/dogs" component={DogsContainer} />
     </main>
 
     {
